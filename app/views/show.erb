@@ -1,0 +1,9 @@
+<div class="container">
+
+	<h1><%= @topic.title %></h1>
+	<% @topic.comments.each do |comment| %>
+	<%= comment.content %>
+	<% end %>
+</div>
+
+
