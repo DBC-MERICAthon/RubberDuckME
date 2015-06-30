@@ -1,0 +1,13 @@
+<h1> Hi! This is the topic page</h1>
+
+<a href="/topics/new">New Topic</a>
+
+<div class="topic_box">
+
+<% @topics.each do |topic| %>
+
+<p><%= topic.title %></p>
+
+<% end %>
+
+</div>
