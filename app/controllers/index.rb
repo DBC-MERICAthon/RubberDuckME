@@ -1,12 +1,12 @@
 get '/' do
-	"Hello World!"
+	redirect '/topics'
 end
 
 #Index
 
 get '/topics' do
 	@topics = Topic.all
-	erb :topics
+	erb :topic
 end
 
 #New
@@ -18,12 +18,13 @@ end
 
 #Create
 
-post 'topics' do
-	
-@topics = Topic.create(
-	topic: params[:topic]
+post '/topics' do
+
+Topic.create(
+	title: params[:title]
 	)
 
+redirect '/topics'
 end
 
 #Show
