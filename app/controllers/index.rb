@@ -3,6 +3,10 @@ get '/' do
 	erb :index
 end
 
+get '/pad' do
+	erb :firepad
+end
+
 post '/topics' do
 	puts "*" *100
 	Topic.create(title: params[:topic_title])
