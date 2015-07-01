@@ -1,36 +1,26 @@
 get '/' do
-	redirect '/topics'
-end
-
-#Index
-
-get '/topics' do
 	@topics = Topic.all
-	erb :topic
+	erb :index
 end
-
-#New
-
-get '/topics/new' do
-
-	erb :topic_form
-end
-
-#Create
 
 post '/topics' do
-
-Topic.create(
-	title: params[:title]
-	)
-
-redirect '/topics'
+	puts "*" *100
+	Topic.create(title: params[:topic_title])
+	redirect '/'
 end
 
-#Show
 
-#Edit
+get '/topics/:id' do
+	@topic = Topic.find(params[:id])
+	erb :show
+end
 
-#Update
+post '/topics/:id/comments' do
+	p params[:id]
+	p params[:content]
+	@topic = Topic.find(params[:id])
+	@topic.comments << Comment.create(content: params[:content])
+	redirect "/topics/#{@topic.id}"
+end
 
-#Delete
+

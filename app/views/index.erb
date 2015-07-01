@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>Topics</h1>
+		<div>
+			<% if @topics %>
+				<% @topics.each do |topic| %>
+				<p><a href="topics/<%= topic.id %>"><%= topic.title %></a>
+				<% end %>
+			<% end %>
+		</div>
+
+	<form action="/topics" method="Post">
+	  <input type="text" name="topic_title" placeholder="Add a Topic" >
+	  <br><br>
+	  <input type="submit" value="SUBMIT">
+	</form>
+
+</div>

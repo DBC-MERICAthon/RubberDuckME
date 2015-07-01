@@ -1,4 +1,9 @@
-.topic_box{
-	display: center;
-	border: 5px dotted red;
+
+.container {
+  margin: 60px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  background-color: white;
+  border-radius: 25px;
 }
