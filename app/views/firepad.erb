@@ -11,7 +11,14 @@
 <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.1.1/firepad.css" />
 <script src="https://cdn.firebase.com/libs/firepad/1.1.1/firepad.min.js"></script>
 
-<div id="firepad">bye</div>
+<style>
+.firepad {
+  width: 700px;
+  height: 450px;
+  background-color: #f62; /* dark orange background */
+}
+</style>
+<div id="firepad"></div>
   <script>
     var firepadRef = new Firebase('https://rubberducking.firebaseio.com//');
     var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
