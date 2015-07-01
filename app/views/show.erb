@@ -2,8 +2,17 @@
 
 	<h1><%= @topic.title %></h1>
 	<% @topic.comments.each do |comment| %>
-	<%= comment.content %>
+	<p><%= comment.content %></p>
 	<% end %>
+	<br><br>
+
+	<form action="/topics/<%= @topic.id %>/comments" method="Post">
+		<input type="text" name="content" placeholder="Add a Comment">
+		<input type="submit" value="SUBMIT">
+	</form>
+
 </div>
+
+
 
 
